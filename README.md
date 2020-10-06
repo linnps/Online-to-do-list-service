@@ -11,7 +11,7 @@ The location changes with different users.
 <img src="display3.png" alt="Display">
 The weather changes with different users.
 <img src="display4.png" alt="Display">
-Add a name after the webiste address will bring up a customized to-do-ist.
+Add a name after the webiste address will bring up a personal to-do-ist saving in different collection.
 <img src="display5.png" alt="Display">
-A customized to-do-ist is generated.
+A personal to-do-ist is generated.
 <img src="display6.png" alt="Display">
