@@ -1,0 +1,46 @@
+<%- include("header") -%>
+
+
+
+<div class="box" id="heading">
+  <h1> <%= listTitle %> </h1>
+</div>
+
+<div class="box">
+
+  <% newListItems.forEach(function(item){ %>
+  <form class="" action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+      <p><%=  item.name  %></p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+  </form>
+  <% }) %>
+
+
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="list" value="<%=  listTitle  %>">Click<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-bookmark-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm4.5 4.5a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z" />
+      </svg>
+    </button>
+  </form>
+</div>
+
+<div class="box" id="heading">
+  <h1> Your Location: <%= cityPlace %> </h1>
+</div>
+
+<div class="box2">
+  <h2>The weather is currently <%= weD %>. The temperature is <%= temperature %> degrees Celcius.</h2>
+  <img class="weatherImage" src=<%= weImage %>>
+</div>
+
+<div class="box3">
+  <h3><%= date %></h3>
+
+</div>
+
+<%- include("footer") -%>
