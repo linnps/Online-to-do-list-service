@@ -13,5 +13,5 @@ The weather changes with different users.
 <img src="display4.png" alt="Display">
 Add a name after the webiste address will bring up a customized to-do-ist.
 <img src="display5.png" alt="Display">
-a customized to-do-ist is generated.
+A customized to-do-ist is generated.
 <img src="display6.png" alt="Display">
