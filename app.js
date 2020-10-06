@@ -52,7 +52,7 @@ const listSchema = {
 const List = mongoose.model("List", listSchema);
 
 
-let idAddress;
+let ip;
 let region;
 let regionUrl;
 let weatherData;
@@ -65,15 +65,15 @@ let city;
 app.get("/", function(req, res) {
   const day = date.getDate();
   /////IP Address Session Start/////
-  if (!idAddress) {
-    idAddress = req.headers["x-forwarded-for"];
-    if (idAddress) {
-      var list = idAddress.split(",");
-      idAddress = list[list.length - 1];
+  if (!ip) {
+    ip = req.headers["x-forwarded-for"];
+    if (ip) {
+      var list = ip.split(",");
+      ip = list[list.length - 1];
     } else {
-      idAddress = req.connection.remoteAddress;
+      ip = req.connection.remoteAddress;
     }
-    regionUrl = "https://api.ipstack.com/" + idAddress + "?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
+    regionUrl = "https://api.ipstack.com/" + ip + "?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
 
     //test on local Server
     //regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
