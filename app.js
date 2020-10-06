@@ -65,19 +65,19 @@ let city;
 app.get("/", function(req, res) {
   const day = date.getDate();
   /////IP Address Session Start/////
-  if (!ip) {
-    ip = req.headers["x-forwarded-for"];
-    if (ip) {
-      var list = ip.split(",");
-      ip = list[list.length - 1];
-    } else {
-      ip = req.connection.remoteAddress;
-    }
-    regionUrl = "https://api.ipstack.com/" + ip + "?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
 
-    //test on local Server
-    //regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
+  ip = req.headers["x-forwarded-for"];
+  if (ip) {
+    var list = ip.split(",");
+    ip = list[list.length - 1];
+  } else {
+    ip = req.connection.remoteAddress;
   }
+  regionUrl = "https://api.ipstack.com/" + ip + "?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
+
+  //test on local Server
+  //regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
+
 
   https.get(regionUrl, function(response) {
     response.on("data", function(data) {
@@ -113,10 +113,10 @@ app.get("/", function(req, res) {
   });
   console.log(city);
 
-  Item.find({}, function(err, foundItems){
+  Item.find({}, function(err, foundItems) {
 
-    if(foundItems.length === 0) {
-      Item.insertMany(defaultItems, function(err){
+    if (foundItems.length === 0) {
+      Item.insertMany(defaultItems, function(err) {
         if (err) {
           console.log(err);
         } else {
