@@ -69,7 +69,7 @@ app.get("/", function(req, res) {
     idAddress = req.headers["x-forwarded-for"];
     if (idAddress) {
       var list = idAddress.split(",");
-      ipAddr = list[list.length - 1];
+      idAddress = list[list.length - 1];
     } else {
       idAddress = req.connection.remoteAddress;
     }
