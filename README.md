@@ -5,7 +5,7 @@ Please refer to the link for display: https://intense-ocean-50308.herokuapp.com/
 <hr>
 Step 1: Hit the + button to add a new item. Hit the check box to delete an item.
 <img src="display1.png" alt="Display">
-Step 2: The website will show your location, the weather, and The temperature.
+Step 2: The website will show your location, the weather, and the temperature.
 <img src="display2.png" alt="Display">
 The location changes with different users.
 <img src="display3.png" alt="Display">
