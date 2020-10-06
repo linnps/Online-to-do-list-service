@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-ander:03511579@cluster0.xnjgc.mongodb.net/todolistDB", {
+mongoose.connect("mongodb+srv://(User is Hidden):(PW is Hidden)@cluster0.xnjgc.mongodb.net/todolistDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -73,10 +73,9 @@ app.get("/", function(req, res) {
   } else {
     ip = req.connection.remoteAddress;
   }
-  regionUrl = "https://api.ipstack.com/" + ip + "?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
+  regionUrl = "https://api.ipstack.com/" + ip + "?access_key=(Key is Hidden)&fields=city,region_name";
 
-  //test on local Server
-  //regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=9c6418054d73fe01fae9b1e684ff5e1e&fields=city,region_name";
+
 
 
   https.get(regionUrl, function(response) {
@@ -87,7 +86,7 @@ app.get("/", function(req, res) {
       ///////Weather Session Start//////////
       city = region.city;
       console.log(city);
-      const apiKey = "f00a69f9e3c4421cb4b8a54b12432d83";
+      const apiKey = "(Key is Hidden)";
       const unit = "metric";
       const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=" + unit;
 
@@ -102,10 +101,7 @@ app.get("/", function(req, res) {
           console.log(weatherDescription);
           icon = weatherData.weather[0].icon;
           imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-          // res.write("<h1>The weather is currently " + weatherDescription + "</h1>");
-          // res.write("<h1>The temperature in " + query +" is " + temp + " degrees Celcius</h1>");
-          // res.write("<img src=" + imageURL + ">");
-          // res.send();
+
         });
       });
       ////////Weather session End///////
