@@ -1,6 +1,6 @@
 html {
   background-color: #ABACAE;
-  background-image: gray;
+  background-image: url("/images/ICBackground.jpg");
   min-height: 1000px;
   font-family: 'helvetica neue';
 }

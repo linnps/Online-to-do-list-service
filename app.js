@@ -84,7 +84,7 @@ app.get("/", function(req, res) {
       region = JSON.parse(data);
       console.log(region);
 
-      ///////Weather Session Start/////////
+      ///////Weather Session Start//////////
       city = region.city;
       console.log(city);
       const apiKey = "f00a69f9e3c4421cb4b8a54b12432d83";
