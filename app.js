@@ -73,10 +73,10 @@ app.get("/", function(req, res) {
     } else {
       idAddress = req.connection.remoteAddress;
     }
-    //regionUrl = "http://api.ipstack.com/" + idAddress + "?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
+    regionUrl = "http://api.ipstack.com/" + idAddress + "?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
 
     //test on local Server
-    regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
+    //regionUrl = "https://api.ipstack.com/24.75.195.117?access_key=6ad4c8a26dedfa6ee5183b99210202e7&fields=city,region_name";
   }
 
   https.get(regionUrl, function(response) {
